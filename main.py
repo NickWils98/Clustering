@@ -121,7 +121,7 @@ def print_top_words(feature_names, vectorized_articles, cluster_labels):
         count += 1
         print(
             f"Number of articles in the cluster: {np.count_nonzero(cluster_labels == i)}")
-        print(' '.join([feature_names[feature]
+        print(', '.join([feature_names[feature]
               for feature in np.argsort(r)[-5:]]))
         print("\n")
 
@@ -198,5 +198,5 @@ if __name__ == "__main__":
 
     # Print the top 5 differentiating words
     print_top_words(feature_names, vectorized_articles, cluster_labels)
-
-    pca_vectorized[['Titles', 'cluster_labels']].to_csv('clusters.tsv', sep="\t", header=False, index=False)
+    # Write to clusters.tsv
+    #pca_vectorized[['Titles', 'cluster_labels']].to_csv('clusters.tsv', sep="\t", header=False, index=False)
